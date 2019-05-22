@@ -11,7 +11,7 @@ git clone:https://github.com/ZhenHongpeng/vue-elm.git
 
  显示:数据库连接成功,后台接口正常运行
 
- + cd shop
+ + cd waimai
  + npm i 
  + npm run dev
 
