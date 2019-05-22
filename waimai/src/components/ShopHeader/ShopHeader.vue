@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="shop-header-discounts" v-if="info.supports" >
+    <div class="shop-header-discounts" v-if="info.supports">
       <div class="discounts-left">
         <div class="activity" :class="supportClasses[info.supports[0].type]">
           <span class="content-tag">
@@ -57,7 +57,7 @@
               <p>月售</p>
             </li>
             <li>
-              <h3>{{info.description}}</h3>
+              <h3>蜂鸟专送</h3>
               <p>约 {{info.deliveryTime}} 分钟</p>
             </li>
             <li>
@@ -82,24 +82,24 @@
     </transition>
 
     <transition name="fade">
-        <div class="activity-sheet" v-show="supportShow">
-          <div class="activity-sheet-content">
-            <h2 class="activity-sheet-title">优惠活动</h2>
-            <ul class="list">
-              <li class="activity-item" v-for="(support, index) in info.supports"
-                  :key="index" :class="supportClasses[support.type]">
+      <div class="activity-sheet" v-show="supportShow">
+        <div class="activity-sheet-content">
+          <h2 class="activity-sheet-title">优惠活动</h2>
+          <ul class="list">
+            <li class="activity-item" v-for="(support, index) in info.supports"
+                :key="index" :class="supportClasses[support.type]">
               <span class="content-tag">
                 <span class="mini-tag">{{support.name}}</span>
               </span>
-                <span class="activity-content">{{support.content}}</span>
-              </li>
-            </ul>
-            <div class="activity-sheet-close" @click="toggleSupportShow">
-              <span class="iconfont icon-close"></span>
-            </div>
+              <span class="activity-content">{{support.content}}</span>
+            </li>
+          </ul>
+          <div class="activity-sheet-close" @click="toggleSupportShow">
+            <span class="iconfont icon-close"></span>
           </div>
-          <div class="activity-sheet-cover" v-show="supportShow" @click="toggleSupportShow"></div>
         </div>
+        <div class="activity-sheet-cover" v-show="supportShow" @click="toggleSupportShow"></div>
+      </div>
     </transition>
   </div>
 </template>
@@ -463,6 +463,7 @@
       width 100%
       height 100%
       z-index 99
+
       &.fade-enter-active, &.fade-leave-active
         transition all .3s
 
